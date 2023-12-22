@@ -47,7 +47,7 @@ jobs:
                 if [ "$NO_UPDATES" != "true" ] ; then
                     git push origin "$branch"
                     gh api \
-                    -- method POST
+                    --method POST
                     -H "Accept: application/vnd.github+json" \
                     /repos/${GITHUB_REPOSITORY}/pulls \
                     -f title="$message" \
