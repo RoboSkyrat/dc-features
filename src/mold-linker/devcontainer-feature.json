@@ -1,0 +1,26 @@
+{
+    "id": "mold-linker",
+    "version": "1.0.0",
+    "name": "Mold Linker",
+    "documentationURL": "https://github.com/roboskyrat/dc-features/tree/main/src/mold-linker",
+    "description": "Install the Mold Linker. Auto-detects latest version and installs needed dependencies.",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none"
+            ],
+            "default": "latest",
+            "description": "Select version of Mold, if not latest."
+        },
+        "installDirectlyFromGitHubRelease": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/git"
+    ]
+}
