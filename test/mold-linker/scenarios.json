@@ -1,0 +1,11 @@
+{
+    "install_mold_from_release": {
+        "image": "debian:bookworm",
+        "features": {
+            "mold-linker": {
+                "version": "latest",
+                "installDirectlyFromGitHubRelease": "true"
+            }
+        }
+    }
+}
