@@ -52,6 +52,6 @@ jobs:
                     /repos/${GITHUB_REPOSITORY}/pulls \
                     -f title="$message" \
                     -f body="$message" \
-                    -f heads="$branch" \
+                    -f head="$branch" \
                     -f base='main'
                 fi
