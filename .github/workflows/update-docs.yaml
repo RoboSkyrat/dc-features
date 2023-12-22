@@ -10,6 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         environment: documentation
         if: github.ref == 'refs/heads/main'
+        permissions:
+            pull-requests: write
         steps:
             - uses: actions/checkout@v3
             
@@ -22,14 +24,14 @@ jobs:
             - name: Create PR for Documentation
               id: push_image_info
               env:
-                GITHUB_TOKEN: ${{ secrets.PAT }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
                 set -e
                 echo "Start."
 
                 # Configure git and push updates
                 git config --global user.email github-actions@github.com
-                git config --glboal user.name github-actions
+                git config --global user.name github-actions
                 git config pull.rebase false
                 
                 branch=automated-documentation-update-$GITHUB_RUN_ID
