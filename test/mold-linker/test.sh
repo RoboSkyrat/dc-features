@@ -79,7 +79,8 @@ find_prev_version_from_git_tags() {
 }
 
 MOLD_VERSION="2.4.0"
+
 find_prev_version_from_git_tags MOLD_VERSION https://github.com/rui314/mold
-check "pre-version-to-2.4.0" bash -c "echo ${MOLD_VERSION} | grep '2.4.0'"
+check "pre-version-to-2.4.0" bash -c "echo ${MOLD_VERSION} | grep '2.3.3'"
 
 reportResults
