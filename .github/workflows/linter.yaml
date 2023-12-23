@@ -1,0 +1,22 @@
+name: "CI - Shell Linter"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  shellchecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Shell Linter
+        uses: azohra/shell-linter@v0.6.0
+        with:
+          path: "src/**/*.sh"
+          severity: "error"
+        env:
+          SHELLCHECK_OPTS: -e SC2072 # decimal comparison is legal in this case
+
+            
