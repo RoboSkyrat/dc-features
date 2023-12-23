@@ -1,6 +1,6 @@
 {
     "id": "mold-linker",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Mold Linker",
     "documentationURL": "https://github.com/roboskyrat/dc-features/tree/main/src/mold-linker",
     "description": "Install the Mold Linker. Auto-detects latest version and installs needed dependencies.",
