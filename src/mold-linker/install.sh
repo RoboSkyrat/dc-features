@@ -115,7 +115,7 @@ find_prev_version_from_git_tags() {
 # Fetches .tar.gz file
 install_tgz_using_github() {
     check_packages wget tar
-    arch=$(dpkg --print-architecture)
+    arch=$(uname -m)
 
     find_version_from_git_tags MOLD_VERSION https://github.com/rui314/mold
     mold_filename="mold-${MOLD_VERSION}-${arch}-linux"
@@ -149,7 +149,7 @@ export DEBIAN_FRONTEND=noninteractive
 check_packages curl ca-certificates apt-transport-https
 if ! type git > /dev/null 2>&1; then
     check_packages git
-fi~
+fi
 
 # Soft version matching
 if [ "${MOLD_VERSION}" != "latest" ] && [ "${MOLD_VERSION}" != "lts" ] && [ "${MOLD_VERSION}" != "stable" ]; then
